@@ -6,22 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HCR</title>
-  <link rel="stylesheet" href="static\css\styles.css">
-  <script src="static\js\script.js" defer></script>
+  <link rel="stylesheet" href="static\css\index.css">
+  <script src="static\js\index.js" defer></script>
 </head>
 
 <body>
-  <h1>HCR</h1>
-  <div class="container">
-    <div class="main">
-      <canvas class="input" id="canvas"></canvas>
-      <!-- <input type="color" id="colorPicker" /> -->
+  <h1 class="heading">Handwritten Character Recognition</h1>
+  <div class="container" id="container">
+
+    <!-- Input container -->
+    <div class="input">
+      <h4 class="input-title">draw here</h4>
+      <canvas class="canvas" id="canvas"></canvas>
     </div>
-    <div class="btns">
-      <button class="convertBtn">SCAN</button>
-      <button class="refreshBtn">CLEAR SCREEN</button>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button class="capture" id="predictBtn">Predict</button>
+      <button class="clear" id="resetBtn">clear screen</button>
     </div>
-    <div class="output"></div>
+
+    <!-- Output container -->
+    <div class="output">
+      <h4 class="output-title">output</h4>
+      <div class="output-box" id="output">8</div>
+    </div>
+
   </div>
 </body>
 
