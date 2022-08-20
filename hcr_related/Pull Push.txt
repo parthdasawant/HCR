@@ -1,0 +1,19 @@
+!DO NOT ENABLE FETCH AT ALL.
+!ALWAYS CHECK YOU ARE IN YOUR PERSONAL BRANCH. 
+
+Pull:
+1. In Source Control, 
+	...(3 dots)-> Pull, Push->Pull From->Select Origin->Select dev
+2. Sync changes
+
+
+Push:
+1. In Source Control,
+	Check whether there is no additional file is generated w.r.t. previously Pulled code(If you haven't made any)
+	If there is, then discard that. 
+2. In Source Control,	
+	stage the changes after reviewing each file.
+3. ...(3 dots)-> Pull, Push->Push. (That's it. (POPING IN YOUR GITHUB IN GREEN COLOR) DO NOT EXECUTE PULL REQUEST TO MAIN BRANCH FROM GITHUB)
+	This pushing is only for your branch only. 
+	For dev, tell @parthdasawant 
+4. sync changes.

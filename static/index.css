@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Signika:wght@400&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Signika', sans-serif;
+}
+
+:root {
+  --output-width: 350px;
+  --output-height: 350px;
+  --canvas-width: 112px;
+  --canvas-height: 112px;
+  --container-width: 100%;
+  --container-height: 100%;
+  --heading-font-size: max(2em, calc(.03 * var(--container-width)));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #838e9e;
+}
+
+.heading {
+  text-align: center;
+  background: #FCF6F5FF;
+  padding: 20px;
+  font-size: var(--heading-font-size);
+  width: 100vw;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 7px;
+  color: black;
+}
+
+.container {
+  width: var(--container-width);
+  height: var(--container-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.input-title {
+  text-transform: uppercase;
+  font-size: max(1.5em, calc(.02 * var(--container-width)));
+  color: black;
+  z-index: 1
+}
+
+.canvas {
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  border-radius: 0px;
+  background: #FCF6F5FF;
+  margin: 20px;
+  /* min-width: 350px;
+  min-height: 350px;
+  max-width: var(--canvas-width);
+  max-height: var(--canvas-height); */
+}
+
+.label {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.colorPicker {
+  width: 150px;
+  height: 30px;
+  border: 2px solid #FCF6F5FF;
+  border-radius: 25px;
+  padding: 7px;
+  outline: none;
+  margin-left: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons>* {
+  width: 13rem;
+  height: 3.5rem;
+  border-radius: 50px;
+  border: 2px solid white;
+  color: #FCF6F5FF;
+  outline: none;
+  background: transparent;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s ease;
+  margin: 0 10px;
+  z-index: 1;
+}
+
+.buttons>*:hover {
+  background: #FCF6F5FF;
+  color: black;
+  transform: scale(1.1);
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.output-box {
+  width: var(--output-width);
+  height: var(--output-height);
+  border-radius: 57px;
+  background: #FCF6F5FF;
+  display: grid;
+  place-items: center;
+  margin: 20px;
+  font-size: 18em;
+  user-select: none;
+  overflow: hidden;
+}
+
+.output-title {
+  text-transform: uppercase;
+  font-size: max(1.5em, calc(.02 * var(--container-width)));
+  text-align: center;
+  color: black;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .canvas {
+    width: calc(0.8 * 87vw);
+    height: calc(0.8 * 87vw);
+  }
+
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 40px 0;
+  }
+}
