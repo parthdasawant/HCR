@@ -21,7 +21,7 @@ def index():
 
 @app.route("/", methods=['POST'])
 def practice_post():
-    print(request.form)
+    # print(request.form)
     pixels = request.form['pixels']
     # print(pixels)
     # print(pixels.shape())
