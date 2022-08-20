@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Signika:wght@400&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,8 +12,8 @@
 :root {
   --output-width: 350px;
   --output-height: 350px;
-  --canvas-width: 500px;
-  --canvas-height: 500px;
+  --canvas-width: 112px;
+  --canvas-height: 112px;
   --container-width: 100%;
   --container-height: 100%;
   --heading-font-size: max(2em, calc(.03 * var(--container-width)));
@@ -62,13 +64,13 @@ body {
 .canvas {
   width: var(--canvas-width);
   height: var(--canvas-height);
-  border-radius: 57px;
+  border-radius: 0px;
   background: #FCF6F5FF;
   margin: 20px;
-  min-width: 350px;
+  /* min-width: 350px;
   min-height: 350px;
   max-width: var(--canvas-width);
-  max-height: var(--canvas-height);
+  max-height: var(--canvas-height); */
 }
 
 .label {
@@ -99,7 +101,7 @@ body {
   align-items: center;
 }
 
-.buttons > * {
+.buttons>* {
   width: 13rem;
   height: 3.5rem;
   border-radius: 50px;
@@ -115,7 +117,7 @@ body {
   z-index: 1;
 }
 
-.buttons > *:hover {
+.buttons>*:hover {
   background: #FCF6F5FF;
   color: black;
   transform: scale(1.1);
@@ -135,7 +137,7 @@ body {
   border-radius: 57px;
   background: #FCF6F5FF;
   display: grid;
-  place-items: center ;
+  place-items: center;
   margin: 20px;
   font-size: 18em;
   user-select: none;
