@@ -1,5 +1,7 @@
 import numpy as np
 # from bidict import bidict
+import cv2
+import tensorflow as tf
 from flask import (
     Flask, render_template, request,
     redirect, url_for, session
@@ -22,20 +24,23 @@ def index():
 @app.route("/", methods=['POST'])
 def practice_post():
     # print(request.form)
-    pixels = request.form['pixels']
+    # pixels = request.form['pixels']
     # print(pixels)
     # print(pixels.shape())
-    pixels = pixels.split(',')
-    img = np.array(pixels).astype(float).reshape(1, 784)
+    # pixels = pixels.split(',')
+    # img = np.array(pixels).astype(float).reshape(1, 784)
     # img=img.reshape(784)
+    img = cv2.imread('001158d595.jpg',cv2.IMREAD_COLOR)
+    img = tf.reshape(img, (-1, 256, 256, 3))
+    loaded_styled_generator = tf.keras.models.load_model('C:\\Users\\PARTH\\Desktop\\data\\saved_model\\styled_generator')
 
-    model = keras.models.load_model('hcr_related\hcr3.h5')
+    pred_letter = loaded_styled_generator(img, training=False)[0].numpy()
+    pred_letter= (pred_letter*127.5 +127.5).astype(np.uint8)
 
-    pred_letter = model.predict(img)
+    # letter = str(LABELS[np.argmax(pred_letter)])
+    cv2.imwrite('pridetcted.jpg',pred_letter)
 
-    letter = str(LABELS[np.argmax(pred_letter)])
-
-    return render_template("index.html", letter=letter)
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
