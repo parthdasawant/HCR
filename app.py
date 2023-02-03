@@ -30,15 +30,19 @@ def practice_post():
     # pixels = pixels.split(',')
     # img = np.array(pixels).astype(float).reshape(1, 784)
     # img=img.reshape(784)
-    img = cv2.imread('001158d595.jpg',cv2.IMREAD_COLOR)
-    img = tf.reshape(img, (-1, 256, 256, 3))
-    loaded_styled_generator = tf.keras.models.load_model('C:\\Users\\PARTH\\Desktop\\data\\saved_model\\styled_generator')
+    img = cv2.imread('download.jfif',cv2.IMREAD_COLOR)
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    img = cv2.resize(img,(256,256))
+# plt.imshow(img)
+    img2= (img-127.5)/127.5
+    img = np.reshape(img2, (-1, 256, 256, 3))
+    loaded_styled_generator = tf.keras.models.load_model('C:\\Users\\PARTH\\Desktop\\rev\\saved_model\\styled_generator')
 
-    pred_letter = loaded_styled_generator(img, training=False)[0].numpy()
+    pred_letter = loaded_styled_generator(img2, training=False)[0].numpy()
     pred_letter= (pred_letter*127.5 +127.5).astype(np.uint8)
 
     # letter = str(LABELS[np.argmax(pred_letter)])
-    cv2.imwrite('pridetcted.jpg',pred_letter)
+    cv2.imwrite('predicted.jpg',pred_letter)
 
     return render_template("index.html")
 
