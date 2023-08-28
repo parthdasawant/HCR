@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCR</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.js">
+  
+<!--   <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" /> -->
+  <!-- <script src="static\js\index.js" defer></script> -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--   <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script> -->
+
+
+</head>
+
+<body>
+
+  <h1 class="heading">Handwritten Character Recognition</h1>
+  <div class="container" id="container">
+
+    <!-- Input container -->
+    <div class="input">
+      <h4 class="input-title">draw here</h4>
+      <canvas class="canvas" id="canvas" width="112" height="112"></canvas>
+    </div>
+
+    <form name="practice-form" id="practice-form" action="" method="POST">
+      <input id="pixels" name="pixels" type="hidden" />
+      <!-- Buttons -->
+
+      <div class="buttons">
+        <button type="button" class="capture" id="predictBtn" onclick="practiceAction()">Predict</button>
+        <button type="button" class="clear" id="resetBtn" onclick="resetCanvas()">clear screen</button>
+      </div>
+    </form>
+    <!-- Output container -->
+    <div class="output">
+      <h4 class="output-title">output</h4>
+      <div class="output-box" id="output">{{letter}}</div>
+    </div>
+
+  </div>
+
+</body>
+<script>
+  $(document).ready(function () {
+    startCanvas()
+  })
+</script>
+
+</html>
