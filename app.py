@@ -29,7 +29,7 @@ def practice_post():
     img = np.array(pixels).astype(float).reshape(1, 784)
     # img=img.reshape(784)
 
-    model = keras.models.load_model('hcr_related\hcr3.h5')
+    model = keras.models.load_model('hcr_related/hcr3.h5')
 
     pred_letter = model.predict(img)
 
